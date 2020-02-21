@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,700&display=swap");
+
+:root {
+  --clr-primary: #143774;
+  --clr-secondary: #1792d2;
+  --clr-dark: #707070;
+  --clr-semi-dark: #f8f8f8;
+
+  --fs-big-title: 2rem;
+  --fs-medium-title: 1.5rem;
+  --fs-sub-title: 0.75rem;
+  --fs-txt: 1.125rem;
+  --fs-info-read: 0.875rem;
+}
+
+body {
+  margin: 0;
+  font-size: var(--fs-txt);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.image-full {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
+
+/* =================
+Typography
+================= */
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  color: var(--clr-primary);
+}
+
+h1 {
+  font-size: var(--fs-big-title);
+  margin: 0;
+}
+
+h3 {
+  color: var(--clr-secondary);
+}
+
+a {
+  color: var(--clr-secondary);
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-primary);
+}
+
+strong {
+  font-weight: 700;
+}
+/* Article fonts */
+.subtitle {
+  font-weight: 700;
+  color: var(--clr-secondary);
+  font-size: var(--fs-sub-title);
+  margin: 0;
+}
+
+.article-title {
+  font-size: 1.5em;
+}
+.article-read-more,
+.article-info {
+  font-size: var(--fs-info-read);
+}
+
+.article-read-more {
+  color: var(--clr-secondary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+  color: var(--clr-primary);
+  text-decoration: underline;
+}
+
+.article-info {
+  margin: 2em 0;
+}
+
+.widget-title,
+.widget-recent-post-title {
+  font-size: var(--fs-txt);
+}
+
+.widget-title {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+.widget-recent-post-title {
+  color: var(--clr-primary);
+}
+
+/* =============
+Layout
+================ */
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background: var(--clr-semi-dark);
+  text-align: center;
+  padding: 2em 0;
+  margin-bottom: 3em;
+}
+
+footer {
+  background: var(--clr-primary);
+  color: white;
+  text-align: center;
+  padding: 3em 0;
+}
+
+@media (min-width: 675px) {
+  header {
+    text-align: left;
+  }
+  .container-flex {
+    flex-direction: row;
+  }
+
+  main {
+    width: 70%;
+  }
+
+  aside {
+    width: 25%;
+    min-width: 200px;
+    margin-left: 1em;
+  }
+}
+
+/* Nav */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  margin-left: 2em;
+}
+nav a {
+  text-decoration: none;
+  color: var(--clr-dark);
+  font-weight: bold;
+  padding: 0.25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--clr-secondary);
+}
+
+.current-page {
+  border-bottom: 1px solid var(--clr-dark);
+}
+.current-page:hover {
+  color: var(--clr-dark);
+}
+
+@media (max-width: 650px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+}
+
+/* Article now */
+
+.article-featured {
+  border-bottom: 1px solid var(--clr-dark);
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+@media (min-width: 675px) {
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .article-recent-main {
+    width: 68%;
+  }
+  .article-recent-secondary {
+    width: 30%;
+  }
+
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-image {
+    order: -2;
+    min-height: 250px;
+    object-fit: cover;
+  }
+
+  .article-info {
+    order: -1;
+  }
+}
+
+/* Widget */
+
+.sidebar-widget {
+  border: 20px solid var(--clr-semi-dark);
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.widget-recent-post {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--clr-dark);
+  margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+  margin: 0;
+  border: 0;
+}
+
+.widget-image {
+  order: -1;
+}
